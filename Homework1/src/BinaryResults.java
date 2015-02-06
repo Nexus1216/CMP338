@@ -20,7 +20,7 @@ public static void Print (int[] numbers, long[][] binaryTimes, long[] binaryAver
 		{
 			for (int j = 0; j < numbers.length; j++)
 			{
-				System.out.printf("%6TL(ms) ", binaryTimes[j][i]);
+				System.out.printf("%8dns ", binaryTimes[j][i]);
 					
 			}
 			
@@ -37,7 +37,7 @@ public static void Print (int[] numbers, long[][] binaryTimes, long[] binaryAver
 		
 		for (int i = 0; i < numbers.length; i++)
 		{
-			System.out.printf("%6TL(ms) ", binaryAverage[i]);
+			System.out.printf("%8dns ", binaryAverage[i]);
 			
 			if(i == numbers.length - 1)
 				System.out.println("\n");
@@ -45,7 +45,7 @@ public static void Print (int[] numbers, long[][] binaryTimes, long[] binaryAver
 		
 		for (int i = 0; i < numbers.length; i++)
 		{
-			System.out.printf("%6TL(ms) ", binaryStdDev[i]);
+			System.out.printf("%8dns ", binaryStdDev[i]);
 				
 		}
 	}

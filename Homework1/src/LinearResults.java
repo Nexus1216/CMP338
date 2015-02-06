@@ -22,7 +22,7 @@ public class LinearResults {
 		{
 			for (int j = 0; j < numbers.length; j++)
 			{
-				System.out.printf("%6TL(ms) ", linearTimes[j][i]);
+				System.out.printf("%8dns ", linearTimes[j][i]);
 					
 			}
 			
@@ -39,7 +39,7 @@ public class LinearResults {
 		
 		for (int i = 0; i < numbers.length; i++)
 		{
-			System.out.printf("%6TL(ms) ", linearAverage[i]);
+			System.out.printf("%8dns ", linearAverage[i]);
 			
 			if(i == numbers.length - 1)
 				System.out.println("\n");
@@ -47,7 +47,7 @@ public class LinearResults {
 		
 		for (int i = 0; i < numbers.length; i++)
 		{
-			System.out.printf("%6TL(ms) ", linearStdDev[i]);
+			System.out.printf("%8dns ", linearStdDev[i]);
 				
 		}
 	}

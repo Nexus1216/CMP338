@@ -23,25 +23,25 @@ public static void CreateTables(int[] set, int[] numbers){
 			linearRunTime = 0;
 			binaryRunTime = 0;
 			
-			for(int j = 0; j < 9; j++)
+			for(int j = 0; j < 10; j++)
 			{
 				//Run linearSearch for value at element[i] and record execution time
-				long startTime = System.currentTimeMillis();
+				long startTime = System.nanoTime();
 				
 				LinearSearch.linearSearch(set, numbers[i]);
 				
-				long stopTime = System.currentTimeMillis();
+				long stopTime = System.nanoTime();
 				
 				linearRunTime += (stopTime - startTime);
 				
 				linearTimes[i][j] = (stopTime - startTime);
 				
 				//Do the same for Binary Search
-				startTime = System.currentTimeMillis();
+				startTime = System.nanoTime();
 				
 				BinarySearch.binarySearch(set, numbers[i], 0, numbers.length - 1);
 				
-				stopTime = System.currentTimeMillis();
+				stopTime = System.nanoTime();
 				
 				binaryRunTime += (stopTime - startTime);
 				
