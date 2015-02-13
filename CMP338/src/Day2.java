@@ -28,6 +28,8 @@ public class Day2 {
 		
 	}
 	
+
+	
 	public static void binarySearch(int[] a, int target){
 		boolean found = false;
 		int low = 0;
@@ -52,17 +54,5 @@ public class Day2 {
 		
 	}
 	
-	public static void bubbleSort(int[]a){
-		int start = 0;
-		int end = a.length - 1;
-		int next = start + 1;
-		int tmp = 0;
-		
-		while (start < end){
-			if (a[next] < a[start]){
-				
-			}
-		}
-		
-	}
+	
 }
