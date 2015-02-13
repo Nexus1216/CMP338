@@ -2,6 +2,9 @@
 public class Runner {
 	
 public static void CreateTables(int[] set1, int[] set2, String[] numbers){
+	
+		long startTime = 0;
+		long stopTime = 0;
 		
 		long bubbleRunTime = 0;
 		long selectionRunTime = 0;
@@ -37,7 +40,7 @@ public static void CreateTables(int[] set1, int[] set2, String[] numbers){
 			for(int j = 0; j < 10; j++)
 			{
 				//Run Bubble Sort for value at element[i] and record execution time
-				long startTime = System.nanoTime();
+				startTime = System.nanoTime();
 				
 				if(i < numbers.length/2){
 					Bubble.Sort(set1);
@@ -46,7 +49,7 @@ public static void CreateTables(int[] set1, int[] set2, String[] numbers){
 					Bubble.Sort(set2);
 				}
 				
-				long stopTime = System.nanoTime();
+				stopTime = System.nanoTime();
 				
 				bubbleRunTime += (stopTime - startTime);
 				
