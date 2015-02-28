@@ -42,6 +42,7 @@ public class ArrayList implements ListInterface {
 
 	@Override
 	public boolean addAt(int obj, int index) {
+		boolean rc = false;
 		if(index <= size() && !isEmpty()){
 			int[] temp = new int[size() + 1];
 			temp[index] = obj;
@@ -58,11 +59,13 @@ public class ArrayList implements ListInterface {
 			array = null;
 			array = temp;
 			
-			return true;
+			rc = true;
 		}
 		else{
-			return false;
+			add(obj);
+			rc= true;
 		}
+		return rc;
 	}
 
 	@Override
@@ -130,8 +133,14 @@ public class ArrayList implements ListInterface {
 
 	@Override
 	public int getNextObject() {
+		if (current < size() && !isEmpty()){
+			current++;
+			return array[current];
+		}
+		else{
+			return 0;
+		}
 		
-		return current;
 	}
 
 	@Override
@@ -158,8 +167,20 @@ public class ArrayList implements ListInterface {
 	@Override
 	public void removeAll() {
 		array = null;
-		//array = new int[0];
 
+	}
+	
+	public void showList() {
+		if (isEmpty()) {
+			System.out.println("The Array List Is Empty...");
+		} else {
+			System.out.print("The Array List Contains: {" + getFirstObject());
+			while (current < size() - 1) {
+				getNextObject();
+				System.out.print(", " + array[current]);
+			}
+			System.out.println("}");
+		}
 	}
 
 }

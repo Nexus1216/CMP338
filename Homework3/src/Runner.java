@@ -16,7 +16,7 @@ public class Runner {
 		long arrayStdDev[] = new long [numbers.length];
 		
 				
-		for(int i = 0; i < numbers.length; i++)
+		for(int i = 1; i <= numbers.length; i++)
 		{
 			linkedRunTime = 0;
 			arrayRunTime = 0;
@@ -33,7 +33,7 @@ public class Runner {
 				
 				linkedRunTime += (stopTime - startTime);
 				
-				linkedTimes[i][j] = (stopTime - startTime);
+				linkedTimes[i - 1][j] = (stopTime - startTime);
 				
 				//Do the same for executeArray
 				startTime = System.currentTimeMillis();
@@ -44,14 +44,14 @@ public class Runner {
 				
 				arrayRunTime += (stopTime - startTime);
 				
-				arrayTimes[i][j] = (stopTime - startTime);
+				arrayTimes[i - 1][j] = (stopTime - startTime);
 				
 			}
 			
-			linkedAverage[i] = linkedRunTime/10;
-			arrayAverage[i] = arrayRunTime/10;
-			linkedStdDev[i] = StandardDeviation.stdDev(linkedTimes[i], linkedAverage[i]);
-			arrayStdDev[i] = StandardDeviation.stdDev(arrayTimes[i], arrayAverage[i]);
+			linkedAverage[i - 1] = linkedRunTime/10;
+			arrayAverage[i - 1] = arrayRunTime/10;
+			linkedStdDev[i - 1] = StandardDeviation.stdDev(linkedTimes[i - 1], linkedAverage[i - 1]);
+			arrayStdDev[i - 1] = StandardDeviation.stdDev(arrayTimes[i - 1], arrayAverage[i - 1]);
 		}
 		
 		Results.Print (numbers, linkedTimes, linkedAverage, linkedStdDev, "Linked  List");
