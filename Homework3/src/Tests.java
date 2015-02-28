@@ -3,7 +3,7 @@ public class Tests {
 
 	public static void main(String[] args) {
 		//Enter the number of the Homework assignment task (1 - 6) to view the results
-		int questionNum = 6;
+		int questionNum = 4;
 		LinkedList linked = new LinkedList();
 		ArrayList array = new ArrayList();
 		
