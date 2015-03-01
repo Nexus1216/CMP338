@@ -123,7 +123,7 @@ public class LinkedList implements ListInterface {
 			rc = curNode.getData();
 		}
 
-		return 0;
+		return rc;
 	}
 
 	@Override
