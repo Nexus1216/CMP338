@@ -18,38 +18,47 @@ public class Populate {
 		
 		if(testNum == 1){
 			Sort.merge(ascending);
+			//System.out.println(ascending.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 2){
 			Sort.merge(random);
+			//System.out.println(random.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 3){
 			Sort.merge(decending);
+			//System.out.println(decending.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 4){
 			Sort.quickMid(ascending, 0, ascending.size()-1);
+			//System.out.println(ascending.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 5){
 			Sort.quickMid(random, 0, random.size()-1);
+			//System.out.println(random.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 6){
 			Sort.quickMid(decending, 0, decending.size()-1);
+			//System.out.println(decending.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 7){
 			Sort.quickFirst(ascending, 0, ascending.size()-1);
+			//System.out.println(ascending.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 8){
 			Sort.quickFirst(random, 0, random.size()-1);
+			//System.out.println(random.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		if(testNum == 9){
 			Sort.quickFirst(decending, 0, decending.size()-1);
+			//System.out.println(decending.toString());
 			System.out.println("Test: " + testNum + " Completed");
 		}
 		
