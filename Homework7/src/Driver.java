@@ -3,7 +3,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		String[] tests = {"Merge Ascending", "Merge Random", "Merge Reverse","Quick1 Ascending", "Quick1 Random", "Quick1 Reverse","Quick2 Ascending", "Quick2 Random", "Quick2 Reverse",};
+		String[] tests = {"Merge Ascend", "Merge Random", "Merge Descend","QS Mid Ascend", "QS Mid Random", "QS Mid Descend","QS 1st Ascend", "QS 1st Random", "QS 1st Decend", "QS RND Ascend", "QS RND Random", "QS RND Descend", "Heap Ascend", "Heap Random", "Heap Descend"};
 		
 		
 		CreateTables(tests);
@@ -40,7 +40,7 @@ public class Driver {
 				
 				runTime += (stopTime - startTime);
 				
-				performance = (" Memory Usage; " + Populate.memoryCheck() + "MB" + " RunTime: " + (runTime/n) + "ms");
+				performance = (" Memory Usage; " + Populate.memoryCheck() + "KB" + " RunTime: " + (runTime/n) + "ms");
 				
 				times[i - 1][j] = (stopTime - startTime);
 				

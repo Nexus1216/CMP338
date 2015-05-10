@@ -1,5 +1,6 @@
 
 
+import java.util.Random;
 import java.util.Vector;
 
 
@@ -54,6 +55,39 @@ public class Sort {
 	    }
 
 	  }
+	  
+	  public static void quickRandom(Vector<Person> people, int low, int high){
+		    int lo = low;
+		    int hi = high;
+		    Person mid;
+		    Random rnd = new Random();
+
+		    if (high > low) { 
+		      mid = (Person) people.elementAt(rnd.nextInt(people.size() - 1));
+
+		      while (lo <= hi) {
+		        while ((lo < high)&& (0 > ((Person) people.elementAt(lo)).compareTo(mid))){
+		          ++lo;
+		        }
+
+		        while ((hi > low) && (0 < ((Person) people.elementAt(hi)).compareTo(mid))){
+		          --hi;
+		        }
+
+		        if (lo <= hi){
+		          swap(people, lo++, hi--);
+		        }
+		      }
+
+		      if (low < hi){
+		        quickMid(people, low, hi);
+		      }
+
+		      if (lo < high){
+		    	  quickMid(people, lo, high);
+		      }
+		    }
+	 }
 
 	
 	 public static void quickMid(Vector<Person> people, int low, int high){
@@ -119,13 +153,43 @@ public class Sort {
 		      }
 		    }
 	}
+	 
+	private static void heapify(Vector<Person> people, int i){
+		int lft = i * 2;
+	    int rgt = lft + 1;
+	    int grt = i;
 
-		  private static void swap(Vector<Person> people, int a, int b) {
-		    Person p;
+	    if (lft <= n && people.elementAt(lft).compareTo(people.elementAt(grt)) > 0){ 
+	    	grt = lft;
+	    }
+	    if (rgt <= n && people.elementAt(rgt).compareTo(people.elementAt(grt)) > 0){ 
+	    	grt = rgt;
+	    }
+	    if (grt != i) {
+	    	swap(people, i, grt);
+	        heapify(people, grt);
+	    }
+	}
 
-		    p = people.elementAt(a);
-		    people.setElementAt(people.elementAt(b), a);
-		    people.setElementAt(p, b);
-		  }
+	public static void heap(Vector<Person> people){
+	        n = people.size() - 1;
+
+	        for (int i = n / 2; i >= 0; i--)
+	            heapify(people, i);
+
+	        for (int i = n; i > 0; i--) {
+	            swap(people, 0, i);
+	            n--;
+	            heapify(people, 0);
+	        }
+	    }
+
+	private static void swap(Vector<Person> people, int a, int b) {
+		Person p;
+
+		p = people.elementAt(a);
+		people.setElementAt(people.elementAt(b), a);
+		people.setElementAt(p, b);
+	}
 
 }
